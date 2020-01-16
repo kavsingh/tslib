@@ -63,9 +63,11 @@ module.exports = {
     {
       files: ['src/**/*'],
       env: { node: false, browser: true },
+      plugins: ['tsdoc'],
       rules: {
         'no-console': 'error',
         '@typescript-eslint/no-var-requires': 'error',
+        'tsdoc/syntax': 'warn',
       },
     },
     {
