@@ -1,4 +1,4 @@
-import { identity } from '~/index';
+import { identity } from './index';
 
 describe('index', () => {
   it('returns arg', () => {

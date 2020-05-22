@@ -1,7 +1,5 @@
 module.exports = {
-  semi: true,
+  quoteProps: 'consistent',
   singleQuote: true,
   trailingComma: 'all',
-  bracketSpacing: true,
-  quoteProps: 'consistent',
 };

@@ -5,4 +5,4 @@
  * @returns The passed in value
  */
 
-export const identity = <T>(value: T) => value;
+export const identity = <T>(value: T): T => value;
