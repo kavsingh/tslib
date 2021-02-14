@@ -1,5 +1,4 @@
 import babel from '@rollup/plugin-babel';
-import typescript from '@rollup/plugin-typescript';
 import resolve from '@rollup/plugin-node-resolve';
 import cleanup from 'rollup-plugin-cleanup';
 
@@ -13,7 +12,6 @@ export default {
   ],
   plugins: [
     resolve({ extensions }),
-    typescript(),
     babel({ extensions, include: ['src/**/*'], exclude: 'node_modules/**' }),
     cleanup({ comments: ['license', 'jsdoc'], maxEmptyLines: 1 }),
   ],
