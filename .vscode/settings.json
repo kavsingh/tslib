@@ -7,14 +7,14 @@
   "files.watcherExclude": {
     "**/node_modules": true,
     "**/dist": true,
-    "**/lib": true,
-    "**/reports": true
+    "**/tmp": true,
+    "**/coverage": true
   },
   "search.exclude": {
     "**/node_modules": true,
     "**/dist": true,
-    "**/lib": true,
-    "**/reports": true
+    "**/tmp": true,
+    "**/coverage": true
   },
   "typescript.tsdk": "node_modules/typescript/lib",
   "[javascript]": {

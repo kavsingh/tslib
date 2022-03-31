@@ -1,6 +1,6 @@
 /.vscode
 /node_modules
-/lib
+/tmp
 /dist
-/temp
+/coverage
 /reports

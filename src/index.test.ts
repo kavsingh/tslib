@@ -1,7 +1,7 @@
-import { identity } from './index';
+import { identity } from "./index";
 
-describe('index', () => {
-  it('returns arg', () => {
+describe("index", () => {
+  it("returns arg", () => {
     const obj = {};
 
     expect(identity(obj)).toBe(obj);
