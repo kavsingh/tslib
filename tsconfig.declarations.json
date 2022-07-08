@@ -1,12 +1,10 @@
 {
-  "extends": "./tsconfig.json",
-  "compilerOptions": {
-    "noEmit": false,
-    "declaration": true,
-    "declarationDir": "./tmp",
-    "emitDeclarationOnly": true,
-  },
-  "include": [
-    "src/**/*"
-  ]
+	"extends": "./tsconfig.json",
+	"compilerOptions": {
+		"noEmit": false,
+		"declaration": true,
+		"declarationDir": "./tmp",
+		"emitDeclarationOnly": true
+	},
+	"include": ["src/**/*"]
 }
