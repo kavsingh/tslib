@@ -12,7 +12,5 @@
 		"paths": { "~/*": ["./src/*"] },
 		"sourceMap": true,
 		"target": "ESNext"
-	},
-	"exclude": ["**/node_modules"],
-	"include": ["./src", "./scripts", "./*.ts"]
+	}
 }
