@@ -62,9 +62,19 @@ module.exports = {
 	},
 	overrides: [
 		{
-			files: ["*.ts"],
+			// see https://github.com/eslint/eslint/discussions/15305#discussioncomment-2508948
+			files: ["*.?(m)js"],
+			parser: "@babel/eslint-parser",
+			parserOptions: {
+				requireConfigFile: false,
+				babelOptions: { plugins: ["@babel/plugin-syntax-import-assertions"] },
+			},
+		},
+		{
+			files: ["*.?(m)ts"],
 			parser: "@typescript-eslint/parser",
 			parserOptions: { project: "./tsconfig.json" },
+			plugins: ["depracation"],
 			extends: [
 				"plugin:@typescript-eslint/recommended",
 				"plugin:@typescript-eslint/recommended-requiring-type-checking",
@@ -91,6 +101,7 @@ module.exports = {
 					"error",
 					{ argsIgnorePattern: "^_", varsIgnorePattern: "^_" },
 				],
+				"deprecation/deprecation": "warn",
 			},
 		},
 		{
@@ -101,7 +112,6 @@ module.exports = {
 		},
 		{
 			files: ["src/**/*"],
-			env: { node: false, browser: true },
 			rules: {
 				"no-console": "error",
 				"import/no-extraneous-dependencies": ["error", srcDependencies],
@@ -109,7 +119,6 @@ module.exports = {
 		},
 		{
 			files: testFilePatterns(),
-			env: { node: true },
 			rules: {
 				"no-console": "off",
 				"import/no-extraneous-dependencies": ["error", devDependencies],
@@ -117,7 +126,7 @@ module.exports = {
 			},
 		},
 		{
-			files: testFilePatterns("ts"),
+			files: testFilePatterns("?(m)ts"),
 			rules: {
 				"@typescript-eslint/no-explicit-any": "off",
 				"@typescript-eslint/no-non-null-assertion": "off",

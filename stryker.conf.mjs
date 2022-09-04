@@ -1,4 +1,6 @@
-module.exports = {
+import jestConfig from "./jest.config.mjs";
+
+export default {
 	mutate: [
 		"src/**/*.ts",
 		"!src/**/*@(.test|.spec|Spec).ts",
@@ -12,7 +14,7 @@ module.exports = {
 	coverageAnalysis: "all",
 	jest: {
 		projectType: "custom",
-		config: require("./jest.config.js"),
+		config: jestConfig,
 		enableFindRelatedTests: true,
 	},
 };
