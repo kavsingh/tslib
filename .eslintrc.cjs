@@ -74,7 +74,7 @@ module.exports = {
 			files: ["*.?(m)ts"],
 			parser: "@typescript-eslint/parser",
 			parserOptions: { project: "./tsconfig.json" },
-			plugins: ["depracation"],
+			plugins: ["deprecation"],
 			extends: [
 				"plugin:@typescript-eslint/recommended",
 				"plugin:@typescript-eslint/recommended-requiring-type-checking",
