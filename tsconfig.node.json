@@ -2,7 +2,7 @@
 	"extends": "./tsconfig.json",
 	"compilerOptions": {
 		"isolatedModules": false,
-		"module": "NodeNext",
+		"module": "ESNext",
 		"types": ["node"]
 	}
 }

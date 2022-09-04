@@ -27,7 +27,8 @@
 		"test": "jest",
 		"test:mutation": "stryker run",
 		"lint": "tsc && eslint .",
-		"build": "rm -rf tmp dist && tsc -P ./tsconfig.declarations.json && rollup -c --environment BUILD:production && rm -rf tmp"
+		"build": "rm -rf tmp dist && tsc -P ./tsconfig.declarations.json && rollup -c --environment BUILD:production && rm -rf tmp",
+		"r": "ts-node-esm -P './tsconfig.node.json' --log-error"
 	},
 	"devDependencies": {
 		"@babel/core": "7.18.13",
@@ -47,6 +48,7 @@
 		"@typescript-eslint/eslint-plugin": "5.36.1",
 		"@typescript-eslint/parser": "5.36.1",
 		"browserslist": "4.21.3",
+		"chalk": "5.0.1",
 		"core-js": "3.25.0",
 		"eslint": "8.23.0",
 		"eslint-config-prettier": "8.5.0",
