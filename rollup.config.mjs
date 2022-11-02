@@ -9,6 +9,7 @@ const { default: swc } = _swc;
 const extensions = [".mts", ".mjs", ".cts", ".cjs", ".ts", ".js"];
 const { exports } = pkg;
 
+/** @type {import("rollup").RollupOptions[]} */
 export default [
 	{
 		input: "./src/index.ts",
