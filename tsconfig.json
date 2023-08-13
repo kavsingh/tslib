@@ -1,23 +1,19 @@
 {
-	"extends": "@tsconfig/node18-strictest/tsconfig.json",
+	"extends": [
+		"@tsconfig/node20/tsconfig.json",
+		"@tsconfig/strictest/tsconfig.json"
+	],
 	"compilerOptions": {
-		"allowJs": true,
-		"checkJs": true,
-		"esModuleInterop": false,
-		"isolatedModules": true,
-		"lib": ["ESNext"],
-		"module": "NodeNext",
-		"moduleResolution": "NodeNext",
 		"noEmit": true,
-		"paths": { "~/*": ["./src/*"] },
 		"sourceMap": true,
-		"target": "ESNext"
+
+		// leave the following to eslint
+		"noUnusedLocals": false,
+		"noUnusedParameters": false,
+		// leave to eslint: some extensions delete
+		// unreachable code detected via ts too eagerly
+		"allowUnreachableCode": true
 	},
-	"exclude": ["**/node_modules"],
-	"include": ["./src", "./*.ts", "./*.mts"],
-	"ts-node": {
-		"esm": true,
-		"transpileOnly": true,
-		"compilerOptions": { "target": "ES2020" }
-	}
+	"exclude": ["**/node_modules", "./coverage", "./reports", "./dist"],
+	"include": ["./src", "./*.ts"]
 }

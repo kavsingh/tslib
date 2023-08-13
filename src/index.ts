@@ -3,7 +3,9 @@
  * @public
  *
  * @param value - The value to pass through
- * @returns The passed in value
+ * @returns The provided value
  */
 
-export const identity = <T>(value: T): T => value;
+export function identity<T>(value: T) {
+	return value;
+}
