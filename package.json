@@ -32,7 +32,6 @@
 		}
 	},
 	"scripts": {
-		"test": "glob -c 'node --loader=tsx --test' './src/**/*.test.ts'",
 		"test:mutation": "stryker run",
 		"lint": "tsc && eslint .",
 		"build": "tsup"
@@ -45,6 +44,7 @@
 		"@types/node": "20.6.0",
 		"@typescript-eslint/eslint-plugin": "6.6.0",
 		"@typescript-eslint/parser": "6.6.0",
+		"bun-types": "1.0.1",
 		"eslint": "8.49.0",
 		"eslint-config-prettier": "9.0.0",
 		"eslint-import-resolver-typescript": "3.6.0",
@@ -55,13 +55,10 @@
 		"eslint-plugin-tsdoc": "0.2.17",
 		"glob": "10.3.4",
 		"prettier": "3.0.3",
-		"tsup": "7.2.0",
-		"tsx": "3.12.8",
+		"tsup": "^7.2.0",
 		"typescript": "5.2.2"
 	},
-	"pnpm": {
-		"overrides": {
-			"tsconfig-paths": ">=4.0.0"
-		}
+	"overrides": {
+		"tsconfig-paths": "4.2.0"
 	}
 }

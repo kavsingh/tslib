@@ -54,6 +54,7 @@ module.exports = {
 		"filenames/match-exported": ["error", "kebab"],
 		"import/no-cycle": "error",
 		"import/no-self-import": "error",
+		"import/no-unresolved": ["error", { ignore: ["^bun:"] }],
 		"import/no-unused-modules": "error",
 		"import/no-useless-path-segments": "error",
 		"import/order": [

@@ -1,12 +1,11 @@
-import assert from "node:assert";
-import { describe, it } from "node:test";
+import { describe, it, expect } from "bun:test";
 
 import { identity } from "./index.js";
 
-void describe("identity", () => {
-	void it("should pass through value", () => {
+describe("identity", () => {
+	it("should pass through value", () => {
 		const obj = {};
 
-		assert.strictEqual(identity(obj), obj);
+		expect(identity(obj)).toBe(obj);
 	});
 });

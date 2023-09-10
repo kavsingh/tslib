@@ -7,6 +7,7 @@
 		"allowJs": true,
 		"noEmit": true,
 		"sourceMap": true,
+		"types": ["bun-types"],
 		// leave the following to eslint
 		"noUnusedLocals": false,
 		"noUnusedParameters": false,
