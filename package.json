@@ -59,6 +59,6 @@
 		"typescript": "5.2.2"
 	},
 	"overrides": {
-		"tsconfig-paths": "4.2.0"
+		"tsconfig-paths": "@latest"
 	}
 }
