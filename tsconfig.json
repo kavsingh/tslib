@@ -1,12 +1,13 @@
 {
-	"extends": [
-		"@tsconfig/strictest/tsconfig.json",
-		"@tsconfig/node20/tsconfig.json"
-	],
+	"extends": "@tsconfig/strictest/tsconfig.json",
 	"compilerOptions": {
 		"allowJs": true,
+		"lib": ["esnext"],
+		"module": "esnext",
+		"moduleResolution": "bundler",
 		"noEmit": true,
 		"sourceMap": true,
+		"target": "es2021",
 		"types": ["bun-types"],
 		// leave the following to eslint
 		"noUnusedLocals": false,

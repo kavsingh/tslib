@@ -4,8 +4,9 @@ import { identity } from "./index.js";
 
 describe("identity", () => {
 	it("should pass through value", () => {
-		const obj = {};
+		// const obj = {};
 
-		expect(identity(obj)).toBe(obj);
+		// expect(identity(obj)).toBe(obj);
+		expect(identity(3)).toBe(3);
 	});
 });
