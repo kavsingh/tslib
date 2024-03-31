@@ -4,7 +4,7 @@ export default defineConfig(() => {
 	return {
 		entry: ["src/index.ts"],
 		format: ["cjs", "esm"],
-		target: "node16",
+		target: "node18",
 		shims: true,
 		dts: true,
 		sourcemap: true,
