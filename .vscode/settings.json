@@ -17,6 +17,7 @@
 		"**/coverage": true
 	},
 	"typescript.tsdk": "node_modules/typescript/lib",
+	"eslint.workingDirectories": [{ "mode": "auto" }],
 	"[javascript]": {
 		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
 	},
