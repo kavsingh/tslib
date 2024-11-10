@@ -1,11 +1,15 @@
 import path from "node:path";
 
-import jsPlugin from "@eslint/js";
-import filenamesPlugin from "@kavsingh/eslint-plugin-filenames";
-import importPlugin from "eslint-plugin-import-x";
-import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended";
+import js from "@eslint/js";
+import filenames from "@kavsingh/eslint-plugin-filenames";
+// eslint-disable-next-line import-x/no-unresolved
+import compat from "eslint-plugin-compat";
+import importX from "eslint-plugin-import-x";
+import n from "eslint-plugin-n";
+import prettierRecommended from "eslint-plugin-prettier/recommended";
+import security from "eslint-plugin-security";
 import globals from "globals";
-import * as tsEslintPlugin from "typescript-eslint";
+import * as tsEslint from "typescript-eslint";
 
 const testFileSuffixes = ["test", "spec", "mock"];
 
@@ -17,7 +21,7 @@ function testFilePatterns({ root = "", extensions = "*" } = {}) {
 	].map((pattern) => path.join(root, `**/${pattern}.${extensions}`));
 }
 
-export default tsEslintPlugin.config(
+export default tsEslint.config(
 	{
 		ignores: [".vscode/*", "tmp/*", "dist/*", "coverage/*", "reports/*"],
 	},
@@ -30,17 +34,25 @@ export default tsEslintPlugin.config(
 		},
 	},
 
-	jsPlugin.configs.recommended,
-	...tsEslintPlugin.configs.strictTypeChecked,
-	...tsEslintPlugin.configs.stylisticTypeChecked,
-	importPlugin.flatConfigs.recommended,
-	importPlugin.flatConfigs.typescript,
-	filenamesPlugin.configs.kebab,
+	js.configs.recommended,
+	...tsEslint.configs.strictTypeChecked,
+	...tsEslint.configs.stylisticTypeChecked,
+	importX.flatConfigs.recommended,
+	importX.flatConfigs.typescript,
+	compat.configs["flat/recommended"],
+	n.configs["flat/recommended"],
+	// eslint-disable-next-line import-x/no-named-as-default-member
+	security.configs.recommended,
+	filenames.configs.kebab,
 
 	{
+		settings: {
+			lintAllEsApis: true,
+			browserslistOpts: { env: "scripts" },
+			node: { version: 22 },
+		},
 		rules: {
 			"camelcase": "off",
-			"curly": ["warn", "multi-line", "consistent"],
 			"no-console": "off",
 			"no-restricted-syntax": [
 				"warn",
@@ -112,19 +124,18 @@ export default tsEslintPlugin.config(
 	},
 
 	{
-		files: ["**/*.?([mc])js?(x)"],
-		extends: [tsEslintPlugin.configs.disableTypeChecked],
-	},
-
-	{
-		files: ["*.?([mc])[tj]s?(x)"],
+		files: ["*.?(m|c)[tj]s?(x)"],
 		rules: {
 			"filenames/match-exported": "off",
 		},
 	},
 
 	{
-		files: ["src/**/*.?([mc])[tj]s?(x)"],
+		files: ["src/**/*.?(m|c)[tj]s?(x)"],
+		settings: {
+			browserslistOpts: { env: "src" },
+			node: { version: 18 },
+		},
 		rules: {
 			"no-console": "error",
 		},
@@ -134,6 +145,10 @@ export default tsEslintPlugin.config(
 		files: testFilePatterns(),
 		languageOptions: {
 			globals: { ...globals.node },
+		},
+		settings: {
+			browserslistOpts: { env: "script" },
+			node: { version: 22 },
 		},
 		rules: {
 			"no-console": "off",
@@ -155,9 +170,12 @@ export default tsEslintPlugin.config(
 		},
 	},
 
-	eslintPluginPrettierRecommended,
+	prettierRecommended,
 
 	{
-		rules: { "prettier/prettier": "warn" },
+		rules: {
+			"curly": ["warn", "multi-line", "consistent"],
+			"prettier/prettier": "warn",
+		},
 	},
 );
