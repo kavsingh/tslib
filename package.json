@@ -12,7 +12,7 @@
 	"engines": {
 		"node": ">=18.0.0"
 	},
-	"packageManager": "pnpm@9.15.4+sha512.b2dc20e2fc72b3e18848459b37359a32064663e5627a51e4c74b2c29dd8e8e0491483c3abb40789cfd578bf362fb6ba8261b05f0387d76792ed6e23ea3b1b6a0",
+	"packageManager": "pnpm@10.3.0+sha512.ee592eda8815a8a293c206bb0917c4bb0ff274c50def7cbc17be05ec641fc2d1b02490ce660061356bd0d126a4d7eb2ec8830e6959fb8a447571c631d5a2442d",
 	"type": "module",
 	"main": "./dist/index.cjs",
 	"module": "./dist/index.js",
@@ -39,7 +39,7 @@
 		"build": "tsup"
 	},
 	"devDependencies": {
-		"@eslint/js": "9.19.0",
+		"@eslint/js": "9.20.0",
 		"@kavsingh/eslint-plugin-filenames": "2.0.0-rc.1",
 		"@stryker-mutator/core": "8.7.1",
 		"@tsconfig/node22": "22.0.0",
@@ -47,8 +47,8 @@
 		"@types/eslint": "9.6.1",
 		"@types/eslint-plugin-security": "3.0.0",
 		"@types/eslint__js": "8.42.3",
-		"@types/node": "22.10.10",
-		"eslint": "9.19.0",
+		"@types/node": "22.13.1",
+		"eslint": "9.20.1",
 		"eslint-config-prettier": "10.0.1",
 		"eslint-import-resolver-typescript": "3.7.0",
 		"eslint-plugin-compat": "6.0.2",
@@ -57,12 +57,12 @@
 		"eslint-plugin-prettier": "5.2.3",
 		"eslint-plugin-security": "3.0.1",
 		"glob": "11.0.1",
-		"globals": "15.14.0",
-		"prettier": "3.4.2",
+		"globals": "15.15.0",
+		"prettier": "3.5.0",
 		"tsup": "8.3.6",
 		"tsx": "4.19.2",
 		"typescript": "5.7.3",
-		"typescript-eslint": "8.21.0"
+		"typescript-eslint": "8.24.0"
 	},
 	"browserslist": {
 		"src": [

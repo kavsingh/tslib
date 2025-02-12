@@ -4,6 +4,7 @@
 		"@tsconfig/node22/tsconfig.json"
 	],
 	"compilerOptions": {
+		"allowImportingTsExtensions": true,
 		"allowJs": true,
 		"checkJs": true,
 		"noEmit": true,
