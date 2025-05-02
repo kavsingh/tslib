@@ -18,6 +18,7 @@
 	},
 	"typescript.tsdk": "node_modules/typescript/lib",
 	"eslint.workingDirectories": [{ "mode": "auto" }],
+	"prettier.enable": true,
 	"[javascript]": {
 		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
 	},
