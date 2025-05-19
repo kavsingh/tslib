@@ -2,10 +2,8 @@ import { defineConfig } from "tsdown";
 
 export default defineConfig({
 	entry: ["src/index.ts"],
+	target: "node20",
 	format: ["cjs", "esm"],
-	target: "node18",
-	shims: true,
 	dts: { resolve: true },
-	sourcemap: true,
 	clean: true,
 });
