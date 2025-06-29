@@ -49,7 +49,7 @@ export default tsEslint.config(
 		settings: {
 			lintAllEsApis: true,
 			browserslistOpts: { env: "scripts" },
-			node: { version: 22 },
+			node: { version: 24 },
 		},
 		rules: {
 			"camelcase": "off",
@@ -149,7 +149,7 @@ export default tsEslint.config(
 		},
 		settings: {
 			browserslistOpts: { env: "script" },
-			node: { version: 22 },
+			node: { version: 24 },
 		},
 		rules: {
 			"no-console": "off",
