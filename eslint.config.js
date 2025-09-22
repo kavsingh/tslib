@@ -2,14 +2,15 @@ import path from "node:path";
 
 import js from "@eslint/js";
 import filenames from "@kavsingh/eslint-plugin-filenames";
+import { defineConfig } from "eslint/config";
 // eslint-disable-next-line import-x/no-unresolved
 import compat from "eslint-plugin-compat";
 import { flatConfigs as importX } from "eslint-plugin-import-x";
 import n from "eslint-plugin-n";
-import prettierRecommended from "eslint-plugin-prettier/recommended";
+import prettier from "eslint-plugin-prettier/recommended";
 import security from "eslint-plugin-security";
 import globals from "globals";
-import * as tsEslint from "typescript-eslint";
+import { configs as tsEslint } from "typescript-eslint";
 
 const testFileSuffixes = ["test", "spec", "mock"];
 
@@ -21,9 +22,9 @@ function testFilePatterns({ root = "", extensions = "*" } = {}) {
 	].map((pattern) => path.join(root, `**/${pattern}.${extensions}`));
 }
 
-export default tsEslint.config(
+export default defineConfig(
 	{
-		ignores: [".vscode/*", "tmp/*", "dist/*", "coverage/*", "reports/*"],
+		ignores: [".vscode/*", "tmp/*", "dist/*", "reports/*"],
 	},
 
 	{
@@ -35,8 +36,9 @@ export default tsEslint.config(
 	},
 
 	js.configs.recommended,
-	...tsEslint.configs.strictTypeChecked,
-	...tsEslint.configs.stylisticTypeChecked,
+	...tsEslint.strictTypeChecked,
+	...tsEslint.stylisticTypeChecked,
+	// @ts-expect-error upstream types
 	importX.recommended,
 	importX.typescript,
 	compat.configs["flat/recommended"],
@@ -135,7 +137,7 @@ export default tsEslint.config(
 		files: ["src/**/*.?(m|c)[tj]s?(x)"],
 		settings: {
 			browserslistOpts: { env: "src" },
-			node: { version: 18 },
+			node: { version: 20 },
 		},
 		rules: {
 			"no-console": "error",
@@ -171,7 +173,7 @@ export default tsEslint.config(
 		},
 	},
 
-	prettierRecommended,
+	prettier,
 
 	{
 		rules: {
