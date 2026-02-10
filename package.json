@@ -2,29 +2,22 @@
 	"name": "@namespace/package-name",
 	"version": "0.0.1",
 	"description": "Does something",
+	"license": "MIT",
+	"author": "Author Name <author@email.com> https://author.com",
+	"contributors": [],
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/namespace/package-name.git"
 	},
-	"license": "MIT",
-	"author": "Author Name <author@email.com> https://author.com",
-	"contributors": [],
-	"engines": {
-		"node": ">=20.0.0"
-	},
-	"packageManager": "pnpm@10.17.1+sha512.17c560fca4867ae9473a3899ad84a88334914f379be46d455cbf92e5cf4b39d34985d452d2583baf19967fa76cb5c17bc9e245529d0b98745721aa7200ecaf7a",
-	"type": "module",
-	"main": "./dist/index.cjs",
-	"module": "./dist/index.js",
-	"types": "./dist/index.d.cts",
 	"files": [
 		"dist/**/*"
 	],
+	"type": "module",
 	"exports": {
 		".": {
 			"import": {
-				"types": "./dist/index.d.ts",
-				"default": "./dist/index.js"
+				"types": "./dist/index.d.mts",
+				"default": "./dist/index.mjs"
 			},
 			"require": {
 				"types": "./dist/index.d.cts",
@@ -35,34 +28,32 @@
 	"scripts": {
 		"test": "glob -c 'node --import=tsx --test' './src/**/*.test.*'",
 		"test:ci": "stryker run",
-		"lint": "tsc && eslint .",
+		"lint": "oxlint --type-aware --type-check && eslint . --max-warnings=0 --no-warn-ignored && oxfmt --check",
 		"build": "tsdown"
 	},
 	"devDependencies": {
-		"@eslint/js": "9.36.0",
-		"@kavsingh/eslint-plugin-filenames": "2.0.0-rc.2",
-		"@stryker-mutator/core": "9.1.1",
-		"@tsconfig/node24": "24.0.1",
-		"@tsconfig/strictest": "2.0.5",
+		"@stryker-mutator/core": "9.5.1",
+		"@tsconfig/node20": "20.1.9",
+		"@tsconfig/node24": "24.0.4",
+		"@tsconfig/strictest": "2.0.8",
 		"@types/eslint": "9.6.1",
-		"@types/eslint-plugin-security": "3.0.0",
-		"@types/node": "24.5.2",
-		"@vitest/coverage-v8": "3.2.4",
-		"eslint": "9.36.0",
-		"eslint-config-prettier": "10.1.8",
-		"eslint-import-resolver-typescript": "4.4.4",
-		"eslint-plugin-compat": "6.0.2",
-		"eslint-plugin-import-x": "4.16.1",
-		"eslint-plugin-n": "17.23.1",
-		"eslint-plugin-prettier": "5.5.4",
+		"@types/eslint-plugin-security": "3.0.1",
+		"@types/node20": "npm:@types/node@20.19.33",
+		"@types/node24": "npm:@types/node@24.10.13",
+		"@typescript/native-preview": "7.0.0-dev.20260210.1",
+		"@vitest/coverage-v8": "4.0.18",
+		"eslint": "9.39.2",
+		"eslint-plugin-compat": "6.1.0",
+		"eslint-plugin-n": "17.23.2",
 		"eslint-plugin-security": "3.0.1",
-		"glob": "11.0.3",
-		"globals": "16.4.0",
-		"prettier": "3.6.2",
-		"tsdown": "0.15.4",
-		"tsx": "4.20.5",
-		"typescript": "5.9.2",
-		"typescript-eslint": "8.44.1"
+		"glob-bin": "1.1.0",
+		"oxfmt": "0.31.0",
+		"oxlint": "1.46.0",
+		"oxlint-tsgolint": "0.11.5",
+		"tsdown": "0.20.3",
+		"tsx": "4.21.0",
+		"typescript": "5.9.3",
+		"typescript-eslint": "8.55.0"
 	},
 	"browserslist": {
 		"src": [
@@ -71,5 +62,9 @@
 		"scripts": [
 			"node >= 24"
 		]
-	}
+	},
+	"engines": {
+		"node": ">=20.0.0"
+	},
+	"packageManager": "pnpm@10.29.2+sha512.bef43fa759d91fd2da4b319a5a0d13ef7a45bb985a3d7342058470f9d2051a3ba8674e629672654686ef9443ad13a82da2beb9eeb3e0221c87b8154fff9d74b8"
 }

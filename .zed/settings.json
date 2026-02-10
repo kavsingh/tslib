@@ -1,0 +1,66 @@
+{
+	"format_on_save": "on",
+	"code_actions_on_format": { "source.fixAll": true },
+	"hard_tabs": true,
+
+	"auto_install_extensions": { "tsgo": true, "oxc": true, "html": true },
+
+	"lsp": {
+		"oxlint": {
+			"initialization_options": { "settings": { "typeAware": true } }
+		},
+
+		"oxfmt": {
+			"initialization_options": { "settings": { "run": "onSave" } }
+		},
+
+		"eslint": {
+			"settings": {
+				"workingDirectories": [{ "mode": "auto" }],
+				"onIgnoredFiles": "off"
+			}
+		}
+	},
+
+	"languages": {
+		"TypeScript": {
+			"language_servers": ["tsgo", "vtsls", "oxlint", "eslint", "oxfmt"],
+			"prettier": { "allowed": false },
+			"formatter": [{ "language_server": { "name": "oxfmt" } }],
+			"code_actions_on_format": {
+				"source.fixAll.oxc": true,
+				"source.fixAll.eslint": true
+			}
+		},
+
+		"JavaScript": {
+			"language_servers": ["tsgo", "vtsls", "oxlint", "eslint", "oxfmt"],
+			"prettier": { "allowed": false },
+			"formatter": [{ "language_server": { "name": "oxfmt" } }],
+			"code_actions_on_format": {
+				"source.fixAll.oxc": true,
+				"source.fixAll.eslint": true
+			}
+		},
+
+		"Markdown": {
+			"prettier": { "allowed": false },
+			"formatter": [{ "language_server": { "name": "oxfmt" } }]
+		},
+
+		"JSON": {
+			"prettier": { "allowed": false },
+			"formatter": [{ "language_server": { "name": "oxfmt" } }]
+		},
+
+		"JSONC": {
+			"prettier": { "allowed": false },
+			"formatter": [{ "language_server": { "name": "oxfmt" } }]
+		},
+
+		"YAML": {
+			"prettier": { "allowed": false },
+			"formatter": [{ "language_server": { "name": "oxfmt" } }]
+		}
+	}
+}

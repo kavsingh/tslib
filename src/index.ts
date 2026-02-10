@@ -5,6 +5,6 @@
  * @param value - The value to pass through
  * @returns The provided value
  */
-export function identity<TValue>(value: TValue) {
+export function identity<TValue>(value: TValue): TValue {
 	return value;
 }

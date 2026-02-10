@@ -2,8 +2,8 @@ import { defineConfig } from "tsdown";
 
 export default defineConfig({
 	entry: ["src/index.ts"],
-	target: "node20",
+	target: "node22",
 	format: ["cjs", "esm"],
-	dts: { resolve: true },
+	dts: { build: true },
 	clean: true,
 });
