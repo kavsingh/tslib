@@ -141,8 +141,7 @@ const config: OxlintConfig = defineConfig({
 		{
 			files: ["src/**"],
 			rules: {
-				"import/no-default-export": "off",
-				"import/no-anonymous-default-export": "off",
+				"eslint/no-console": "error",
 			},
 		},
 	],
