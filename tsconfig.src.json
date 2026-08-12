@@ -1,11 +1,12 @@
 {
 	"$schema": "https://json.schemastore.org/tsconfig",
-	"extends": ["./tsconfig.base.json", "@tsconfig/node20/tsconfig.json"],
-	"include": ["./src"],
+	"include": ["src"],
+	"extends": ["./tsconfig.base.json", "@tsconfig/node22/tsconfig.json"],
 	"compilerOptions": {
 		"composite": true,
 		"emitDeclarationOnly": true,
+		"isolatedDeclarations": true,
 		"sourceMap": true,
-		"types": ["node20"]
+		"types": ["node22"]
 	}
 }

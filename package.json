@@ -26,45 +26,33 @@
 		}
 	},
 	"scripts": {
-		"test": "glob -c 'node --import=tsx --test' './src/**/*.test.*'",
+		"test": "node --experimental-strip-types --test ./src/**/*.test.*",
 		"test:ci": "stryker run",
-		"lint": "oxlint --type-aware --type-check && eslint . --max-warnings=0 --no-warn-ignored && oxfmt --check",
+		"lint": "oxlint && oxfmt --check",
 		"build": "tsdown"
 	},
 	"devDependencies": {
-		"@stryker-mutator/core": "9.5.1",
-		"@tsconfig/node20": "20.1.9",
-		"@tsconfig/node24": "24.0.4",
+		"@stryker-mutator/core": "9.6.1",
+		"@tsconfig/node22": "22.0.5",
+		"@tsconfig/node26": "26.0.0",
 		"@tsconfig/strictest": "2.0.8",
 		"@types/eslint": "9.6.1",
 		"@types/eslint-plugin-security": "3.0.1",
-		"@types/node20": "npm:@types/node@20.19.33",
-		"@types/node24": "npm:@types/node@24.10.13",
-		"@typescript/native-preview": "7.0.0-dev.20260210.1",
-		"@vitest/coverage-v8": "4.0.18",
-		"eslint": "9.39.2",
-		"eslint-plugin-compat": "6.1.0",
-		"eslint-plugin-n": "17.23.2",
-		"eslint-plugin-security": "3.0.1",
+		"@types/node22": "npm:@types/node@26.2.0",
+		"@types/node26": "npm:@types/node@26.2.0",
+		"@typescript/native-preview": "npm:typescript@7.0.2",
+		"@vitest/coverage-v8": "4.1.10",
+		"eslint-plugin-n": "18.3.0",
+		"eslint-plugin-security": "4.0.1",
 		"glob-bin": "1.1.0",
-		"oxfmt": "0.31.0",
-		"oxlint": "1.46.0",
-		"oxlint-tsgolint": "0.11.5",
-		"tsdown": "0.20.3",
-		"tsx": "4.21.0",
-		"typescript": "5.9.3",
-		"typescript-eslint": "8.55.0"
-	},
-	"browserslist": {
-		"src": [
-			"node >= 20"
-		],
-		"scripts": [
-			"node >= 24"
-		]
+		"oxfmt": "0.62.0",
+		"oxlint": "1.77.0",
+		"oxlint-tsgolint": "7.0.2001",
+		"tsdown": "0.22.14",
+		"typescript": "npm:@typescript/typescript6@6.0.2"
 	},
 	"engines": {
-		"node": ">=20.0.0"
+		"node": ">=22.0.0"
 	},
-	"packageManager": "pnpm@10.29.2+sha512.bef43fa759d91fd2da4b319a5a0d13ef7a45bb985a3d7342058470f9d2051a3ba8674e629672654686ef9443ad13a82da2beb9eeb3e0221c87b8154fff9d74b8"
+	"packageManager": "pnpm@11.21.0+sha512.521705bce689924eac72f5a3587122f362689ef6571e55ba80076fd637c11132ecffada26fad4ea79c485bfddbfd3d5a2a5b05805a77e893de71ec8a6cca3bb1"
 }

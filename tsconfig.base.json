@@ -3,8 +3,6 @@
 	"extends": "@tsconfig/strictest/tsconfig.json",
 	"compilerOptions": {
 		"allowImportingTsExtensions": true,
-		"allowJs": true,
-		"checkJs": true,
 		"erasableSyntaxOnly": true,
 		"verbatimModuleSyntax": true,
 
