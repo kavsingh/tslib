@@ -1,0 +1,18 @@
+{
+	"$schema": "./node_modules/lefthook/schema.json",
+	"lefthook": "pnpm lefthook",
+	"pre-commit": {
+		"jobs": [
+			{
+				"glob": "*.{ts,tsx,js,tsx,html,css,json,jsonc,yml,yaml,toml,md}",
+				"run": "pnpm oxfmt --no-error-on-unmatched-pattern {staged_files}",
+				"stage_fixed": true
+			},
+			{
+				"glob": "*.{ts,tsx,js,jsx}",
+				"run": "pnpm oxlint --no-error-on-unmatched-pattern {staged_files}"
+			}
+		]
+	},
+	"pre-push": { "jobs": [{ "run": "pnpm lint" }] }
+}
