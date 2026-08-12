@@ -5,6 +5,6 @@ export default defineConfig({
 	platform: "node",
 	target: "node22",
 	format: "esm",
-	dts: { build: true },
+	dts: { build: true, oxc: true },
 	clean: true,
 });
