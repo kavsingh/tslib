@@ -1,0 +1,8 @@
+{
+	"$schema": "./node_modules/@stryker-mutator/core/schema/stryker-schema.json",
+	"mutate": ["src/**/*.ts", "!src/**/*@(.test|.spec|.mock).ts"],
+	"testRunner": "command",
+	"commandRunner": { "command": "pnpm t" },
+	"reporters": ["progress", "clear-text", "html"],
+	"coverageAnalysis": "all"
+}
